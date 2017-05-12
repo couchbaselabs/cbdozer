@@ -7,11 +7,6 @@ import (
 	"time"
 )
 
-type Auth struct {
-	Username string
-	Password string
-}
-
 func MakeTargeter(flags C.RequestFlags) vegeta.Targeter {
 	// unpack request flags to create a new targeter
 	body := flags.GetBody()

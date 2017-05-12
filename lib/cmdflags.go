@@ -90,7 +90,5 @@ func (f *RequestFlags) GetBody() []byte {
 	default:
 		body = []byte(f.RequestBody)
 	}
-
 	return body
-
 }

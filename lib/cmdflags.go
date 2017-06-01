@@ -21,8 +21,9 @@ type RequestFlags struct {
 }
 
 type FTSRequestFlags struct {
-	FTSQueryType string
-	FTSQueryStr  string
+	FTSQueryType  string
+	FTSQueryStr   string
+	FTSResultSize uint64
 }
 
 // parse top-level args and set test flag parsing mode
@@ -71,6 +72,7 @@ func (f *RequestFlags) Parse() {
 		ftsFlags := FTSRequestFlags{}
 		flagSet.StringVar(&ftsFlags.FTSQueryType, "type", "query", "type of query")
 		flagSet.StringVar(&ftsFlags.FTSQueryStr, "query", "", "query string")
+		flagSet.Uint64Var(&ftsFlags.FTSResultSize, "size", 1000, "response size")
 		f.FTSFlags = &ftsFlags
 		flagSet.Parse(f.Args[1:])
 	default:

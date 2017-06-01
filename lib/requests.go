@@ -15,7 +15,7 @@ type FTSQuery struct {
 func NewFTSQuery(flags *FTSRequestFlags) *FTSQuery {
 	ftsQuery := FTSQuery{
 		Fields: []string{"*"},
-		Size:   1000,
+		Size:   flags.FTSResultSize,
 	}
 	ftsQuery.Query = make(map[string]string)
 	ftsQuery.Query[flags.FTSQueryType] = flags.FTSQueryStr

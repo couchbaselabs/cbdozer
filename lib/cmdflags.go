@@ -89,6 +89,7 @@ func (f *RequestFlags) GetBody() []byte {
 	case "fts":
 		ftsQuery := NewFTSQuery(f.FTSFlags)
 		body = ftsQuery.Body()
+		fmt.Printf("%s\n", body)
 	default:
 		body = []byte(f.RequestBody)
 	}

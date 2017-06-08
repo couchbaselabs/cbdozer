@@ -93,5 +93,6 @@ func (f *RequestFlags) GetBody() []byte {
 	default:
 		body = []byte(f.RequestBody)
 	}
+	fmt.Println(string(body))
 	return body
 }
